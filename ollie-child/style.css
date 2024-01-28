@@ -1,0 +1,86 @@
+/*
+Theme Name: Ollie child
+Template: ollie
+*/
+
+section.wp-block-group {
+	margin-block-start: 0;
+}
+
+/* Tempfix: Super List */
+.wp-block-createwithrani-superlist-block {
+	list-style: none;
+}
+.wp-block-createwithrani-superlist-block.horizontal {
+	gap: var(--wp--preset--spacing--small);
+}
+
+/* Custom Block Styles */
+/* Send an element to the top */
+.is-style-ow-top {
+	order: -1;
+	z-index: 1;
+}
+
+/* Set the height to full height */
+.is-style-ow-height-full {
+	align-items: initial;
+	height: 100%;
+}
+
+/* Use grid instead of flex */
+div.is-style-ow-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+/* Card Styles */
+.is-style-ow-card a, .is-style-ow-card a:hover, .is-style-ow-card a:focus, .is-style-ow-card a:focus-within {
+	text-decoration: none;
+}
+
+.is-style-ow-card .wp-block-heading a[href]::after,
+.is-style-ow-card .wp-block-post-title a[href]::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+/* Card Styles: change background on hover */
+.is-style-ow-card .wp-block-cover__background.has-background-dim {
+	transition: opacity 400ms ease;
+}
+.is-style-ow-card:not(:hover) .wp-block-cover__background.has-background-dim {
+	opacity: 1;
+}
+
+/* Card Styles: Change scale on hover */
+@media (prefers-reduced-motion: no-preference) {
+	.is-style-ow-card img {
+		transition: scale 400ms ease;
+	}
+	.is-style-ow-card:hover img, .is-style-ow-card:focus-within img {
+		scale: 1.1;
+	}
+}
+
+/* Card Styles: adjust focus */
+.is-style-ow-card:focus-within {
+	box-shadow: 0 0 0 2px hsl(365 100% 100% / .3);
+}
+.is-style-ow-card:focus-within :focus {
+	outline: none;
+}
+.is-style-ow-card:focus-within .wp-block-cover__background.has-background-dim {
+	opacity: .8;
+}
+
+@media screen and (max-width:1024px){
+	.wp-container-core-post-template-layout-1.wp-container-core-post-template-layout-1 {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
